@@ -1,59 +1,32 @@
 package com.pluralsight;
 
-package com.pluralsight;
+public class Drink extends Item {
+    private DrinkSize size;
+    private String drinkFlavor;
 
-import java.util.ArrayList;
+    public Drink(DrinkSize size, String drinkFlavor) {
+        this.drinkFlavor = drinkFlavor;
+        this.size = size;
+    }
 
-public class Drink {
-    // Represents a drink with size and flavor
-
-    public class Drink {
-
-        private Size size; // small, medium, or large
-
-        private String flavor; // coke, sprite, etc.
-
-
-
-        // Constructor: sets up drink with size and flavor
-
-        public Drink(Size size, String flavor) {
-
-            this.size = size;
-
-            this.flavor = flavor;
-
-        }
-
-
-
-        // Method: returns drink price based on size
-
-        public double getPrice() {
-
-            return switch (size) {
-
-                case SMALL -> 2.00;
-
-                case MEDIUM -> 2.50;
-
-                case LARGE -> 3.00;
-
-            };
-
-        }
-
-
-
-        // Method: builds string with drink size, flavor, and price
-
-        public String toString() {
-
-            return size + " " + flavor + " - $" + getPrice();
-
-        }
+    @Override
+    public double getPrice() {
+        return switch (size) {
+            case SMALL -> 2.00;
+            case MEDIUM -> 2.50;
+            case LARGE -> 3.00;
+        };
 
     }
 
+    @Override
+    public String getName() {
+        return size + " " + drinkFlavor;
 
+    }
+
+    @Override
+    public String toString() {
+        return getName() + " - $" + getPrice();
+    }
 }

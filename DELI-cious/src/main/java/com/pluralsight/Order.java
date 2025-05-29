@@ -1,71 +1,36 @@
-// Represents an entire customer order with sandwiches, drinks, and chips
+package com.pluralsight;// Represents an entire customer order with sandwiches, drinks, and chips
 
-import com.pluralsight.Drink;
+import com.pluralsight.Item;
 
 import java.util.ArrayList;
-
 import java.util.List;
-
-
 
 public class Order {
 
-
-    private List<Drink> drinks = new ArrayList<>(); // list of all drinks
-
-
-
+    private List<Item> items = new ArrayList<>(); // list of all drinks
 
     // Method: add a drink to the order
 
-    public void addDrink(Drink d) {
-
-        drinks.add(d);
-
+    public void addItem(Item item) {
+        items.add(item);
     }
 
-
-
-    }
-
-
-
-    // Method: calculate the total price of the entire order
-
-    // - Adds up prices of all sandwiches, drinks, and chips
-
-    public double getTotal() {
-
+    public double calculateOrderTotal() {
         double total = 0;
-
-        for (Drink d : drinks) total += d.getPrice();
-
+        for (Item item : items) {
+            total += item.getPrice();
+        }
         return total;
-
     }
 
+    public String generateOrderSummary() {
+        StringBuilder summary = new StringBuilder();
+        for (Item item : items) {
+            summary.append("  -").append(item).append("\n");
+        }
+        summary.append("\nTOTAL: $").append(String.format("%.2f", calculateOrderTotal()));
+        return summary.toString();
+
+    }}
 
 
-    // Method: returns a full order summary as a string
-
-    // - Includes details of sandwiches, drinks, chips, and total price
-
-    public String getOrderDetails() {
-
-        StringBuilder sb = new StringBuilder();
-
-
-        sb.append("DRINKS:\n");
-
-        for (Drink d : drinks) sb.append("  - ").append(d).append("\n");
-
-
-        sb.append("\nTOTAL: $").append(String.format("%.2f", getTotal()));
-
-        return sb.toString();
-
-    }
-
-}
-
- 
