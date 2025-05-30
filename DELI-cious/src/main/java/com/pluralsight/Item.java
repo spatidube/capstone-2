@@ -1,18 +1,12 @@
 package com.pluralsight;
 import java.util.*;
+import java.io.*;
+
+
 
 //===ITEM (Abstract class) ===
-public abstract class Item implements  ItemAction {
-    static ArrayList<Item> cart = new ArrayList<Item>();
-
-    public Item() {
-    }
-
-    public static double getTotal() {
-        double total = 0.00;
-        for (Item item : cart){
-            total += item.getPrice();
-        }
-        return total;
+abstract class Item implements ItemAction {
+    public String toString() {
+        return getName() + " - $" + String.format("%.2f", getPrice());
     }
 }

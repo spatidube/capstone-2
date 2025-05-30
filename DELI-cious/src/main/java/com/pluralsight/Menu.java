@@ -1,16 +1,16 @@
 package com.pluralsight;
+import java.util.*;
+import java.io.*;
 
-import java.util.ArrayList;
 
-public class Menu {
+class Menu {
+    private List<String> options = new ArrayList<>();
 
-    private List<String> optioins = new ArrayList<>();
-
-    public void addOption(String option){
+    public void addOption(String option) {
         options.add(option);
     }
 
     public List<String> getOptions() {
-        return optioins;
+        return options;
     }
 }

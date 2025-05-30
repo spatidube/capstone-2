@@ -1,20 +1,14 @@
 package com.pluralsight;
 
-import static com.pluralsight.Menu.*;
-
-public class Topping extends Item {
-
+class Topping extends Item {
     private String label;
     private Enums.ToppingCategory kind;
     private boolean extraPortion;
-
 
     public Topping(String label, Enums.ToppingCategory kind, boolean extraPortion) {
         this.label = label;
         this.kind = kind;
         this.extraPortion = extraPortion;
-
-
     }
 
     public double calculateCost(int sandwichLength) {
@@ -28,8 +22,8 @@ public class Topping extends Item {
     public double getPrice() {
         return 0.0;
     }
+
     public String getName() {
-        return label + (extraPortion ? "(extra)" : "");
+        return label + (extraPortion ? " (extra)" : "");
     }
 }
-

@@ -1,39 +1,18 @@
 package com.pluralsight;
 
-import java.util.ArrayList;
+import java.util.*;
+import java.io.*;
 
-public class Drink extends Item {
-    private DrinkSize size;
-    private String drinkFlavor;
-    private boolean hasIce;
 
-    // Static list of available drink flavors (Strings instead of Drink objects)
-    private static ArrayList<String> availableFlavors = new ArrayList<>();
+class Drink extends Item {
+    private Enums.DrinkSize size;
+    private String flavor;
 
-    public Drink(DrinkSize size, String drinkFlavor, boolean hasIce) {
+    public Drink(Enums.DrinkSize size, String flavor) {
         this.size = size;
-        this.drinkFlavor = drinkFlavor;
-        this.hasIce = hasIce;
+        this.flavor = flavor;
     }
 
-    public String getDrinkFlavor() {
-        return drinkFlavor;
-    }
-
-    public static void addAvailableFlavor(String flavor) {
-        availableFlavors.add(flavor);
-    }
-
-    public static void printAvailableFlavors() {
-        System.out.println("\nList of Drink Flavors:");
-        int index = 1;
-        for (String flavor : availableFlavors) {
-            System.out.println(index + ".) " + flavor);
-            index++;
-        }
-    }
-
-    @Override
     public double getPrice() {
         return switch (size) {
             case SMALL -> 2.00;
@@ -42,14 +21,7 @@ public class Drink extends Item {
         };
     }
 
-    @Override
     public String getName() {
-        return size + " " + drinkFlavor;
-    }
-
-    @Override
-    public String toString() {
-        String iceInfo = hasIce ? "on the rocks (ice)" : "No Ice";
-        return getName() + " - " + iceInfo + " - $" + getPrice();
+        return size + " " + flavor;
     }
 }
