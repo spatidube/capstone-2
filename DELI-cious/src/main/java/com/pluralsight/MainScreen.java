@@ -1,10 +1,9 @@
 package com.pluralsight;
 import java.util.*;
 import java.io.*;
-
-
-
-class MainScreen {
+@SuppressWarnings("all")
+public class YourClassName
+{
     public static void displayWelcome() {
         System.out.println("Welcome to DELI-cious!\n------------------------");
     }

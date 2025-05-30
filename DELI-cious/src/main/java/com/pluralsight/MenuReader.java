@@ -1,6 +1,6 @@
 package com.pluralsight;
-
-class MenuReading {
+@SuppressWarnings("all")
+public class class MenuReading {
     public static void loadMenu(Menu menu) {
         menu.addOption("New Order");
         menu.addOption("Exit");

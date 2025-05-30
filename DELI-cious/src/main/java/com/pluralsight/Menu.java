@@ -2,8 +2,13 @@ package com.pluralsight;
 import java.util.*;
 import java.io.*;
 
+@SuppressWarnings("all")
+public class Menu {
+    // class code here
+}
 
 class Menu {
+
     private List<String> options = new ArrayList<>();
 
     public void addOption(String option) {
@@ -12,5 +17,6 @@ class Menu {
 
     public List<String> getOptions() {
         return options;
+
     }
 }

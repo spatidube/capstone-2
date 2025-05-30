@@ -54,14 +54,8 @@ public class UserInterface {
         }
     }
 
-    private void removeLastItem() {
-        if (!currentOrder.isEmpty()) {
-            Item removed = currentOrder.remove(currentOrder.size() - 1);
-            System.out.println("Removed: " + removed.getName());
-        } else {
-            System.out.println("No items to remove.");
-        }
-    }
+
+
 //understand
     private Sandwich buildSandwich() {
         System.out.print("Enter sandwich size (4, 8, 12): ");
@@ -95,7 +89,7 @@ public class UserInterface {
 
         return sandwich;
     }
-
+//customer customizing their drink
     private Drink buildDrink() {
         System.out.print("Enter drink size (SMALL, MEDIUM, LARGE): ");
         Enums.DrinkSize size = Enums.DrinkSize.valueOf(scanner.nextLine().toUpperCase());
@@ -105,27 +99,12 @@ public class UserInterface {
 
         return new Drink(size, flavor);
     }
-
+//customer ordering their drink
     private Chips buildChips() {
         System.out.print("Enter chip flavor: ");
         return new Chips(scanner.nextLine());
     }
 
-    private void checkout() {
-        double total = 0.0;
-        System.out.println("\nOrder Summary:");
-        for (Item item : currentOrder) {
-            System.out.println("- " + item);
-            total += item.getPrice();
-        }
-        System.out.printf("Total: $%.2f%n", total);
-        System.out.println("Confirm order? (Y/N): ");
-        String confirm = scanner.nextLine();
-        if (confirm.equalsIgnoreCase("Y")) {
-            ReceiptWriter.writeReceipt(currentOrder, total);
-            System.out.println("Receipt created. Returning to home screen.\n");
-        } else {
-            System.out.println("Order cancelled. Returning to home screen.\n");
-        }
+
     }
 }

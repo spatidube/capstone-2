@@ -1,5 +1,11 @@
 package com.pluralsight;
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.List;
+@SuppressWarnings("all")
+public class Item {
+    // class code here
+}
 
 class Sandwich extends Item {
     private int lengthInInches;
@@ -24,13 +30,5 @@ class Sandwich extends Item {
             case 12 -> 8.50;
             default -> 0.0;
         };
-        for (Topping topping : includedToppings) {
-            basePrice += topping.calculateCost(lengthInInches);
-        }
-        return basePrice;
-    }
-
-    public String getName() {
-        return lengthInInches + "\" " + breadChoice + (isToasted ? " (toasted)" : "");
     }
 }
