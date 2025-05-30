@@ -62,7 +62,7 @@ public class UserInterface {
             System.out.println("No items to remove.");
         }
     }
-
+//understand
     private Sandwich buildSandwich() {
         System.out.print("Enter sandwich size (4, 8, 12): ");
         int size = scanner.nextInt();
