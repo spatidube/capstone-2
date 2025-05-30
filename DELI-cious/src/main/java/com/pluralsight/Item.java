@@ -1,6 +1,6 @@
 package com.pluralsight;
 
-//abstract class
+//===ITEM (Abstract class) ===
 public abstract class Item {
 
     public abstract double getPrice();

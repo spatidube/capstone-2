@@ -8,7 +8,6 @@ public class Drink extends Item {
         this.drinkFlavor = drinkFlavor;
         this.size = size;
     }
-
     @Override
     public double getPrice() {
         return switch (size) {
@@ -16,7 +15,6 @@ public class Drink extends Item {
             case MEDIUM -> 2.50;
             case LARGE -> 3.00;
         };
-
     }
 
     @Override

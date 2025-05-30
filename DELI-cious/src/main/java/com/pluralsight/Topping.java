@@ -7,7 +7,7 @@ public class Topping {
 
     public Topping(String label, ToppingCategory kind, boolean extraPortion){
 
-        this.lable = label;
+        this.label = label;
         this.kind = kind;
         this.extraPortion = extraPortion;
     }
