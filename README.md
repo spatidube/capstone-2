@@ -18,8 +18,8 @@ This application allows users to customize their experience with
 
 ## 🧱 Class Architecture
 
-[Class Diagram](src/main/resources/Receipts/Capstone%202%20-%20DELI-cious.png)
-![img_2.png](../../../../../target/img_2.png)
+![image](https://github.com/user-attachments/assets/e571bde5-beed-482c-912b-2ab167d7af54)
+
 ---
 
 ## 🖥️ Application Screens
