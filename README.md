@@ -1,5 +1,6 @@
 # DELI-cious Ordering System
-!![img_9.png](../../../../../target/img_9.png)
+![c3e93362-8b64-485b-beb4-490dc6398f6e](https://github.com/user-attachments/assets/670d6b85-4b8f-49be-853e-08dac4dffdb6)
+
 Welcome to the **DELI-cious Ordering System**, an interactive platform designed to bring the essense of Eating Good.nc into a world of sandiwch creativity. 
 This application allows users to customize their experience with
 ---
