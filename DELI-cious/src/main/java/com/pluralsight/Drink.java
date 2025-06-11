@@ -1,27 +1,67 @@
 package com.pluralsight;
 
-import java.util.*;
-import java.io.*;
+import java.util.ArrayList;
 
+//Clancy
+//Steven added toStrings
 
-class Drink extends Item {
-    private Enums.DrinkSize size;
-    private String flavor;
+public class Drink extends Item {
+    protected String drinkSize, drinkFlavor;
+    protected boolean hasIce;
 
-    public Drink(Enums.DrinkSize size, String flavor) {
-        this.size = size;
-        this.flavor = flavor;
+    static ArrayList<Drink> drinkFlavors = new ArrayList<>();
+
+    public Drink(String drinkSize, String drinkFlavor, boolean hasIce) {
+        this.drinkSize = drinkSize;
+        this.drinkFlavor = drinkFlavor;
+        this.hasIce = hasIce;
     }
 
+    public Drink(String drinkFlavor) {
+        this.drinkFlavor = drinkFlavor;
+    }
+
+    public String getDrinkFlavor() {
+        return drinkFlavor;
+    }
+
+    public static void toStringDrinkFlavors() {
+        int temp = 1;
+        System.out.println("\nList of Drink Flavors: ");
+        for (Drink flavors : drinkFlavors) {
+            System.out.println(temp + ".) " + flavors.getDrinkFlavor());
+            temp++;
+        }
+    }
+
+    @Override
     public double getPrice() {
-        return switch (size) {
-            case SMALL -> 2.00;
-            case MEDIUM -> 2.50;
-            case LARGE -> 3.00;
-        };
+        switch (drinkSize) {
+            case "SMALL" -> {
+                return 2.00;
+            }
+            case "MEDIUM" -> {
+                return 2.50;
+            }
+            case "LARGE" -> {
+                return 3.00;
+            }
+            default -> {
+                return 0.0; //default for if user chooses no drink option
+            }
+        }
     }
 
-    public String getName() {
-        return size + " " + flavor;
+    @Override
+    public String toString() {
+        if (hasIce) {
+            return drinkSize + ", " +
+                    drinkFlavor + ", " +
+                    "On The Rocks(Ice)";
+        } else {
+            return drinkSize + ", " +
+                    drinkFlavor + ", " +
+                    "No Ice";
+        }
     }
 }
