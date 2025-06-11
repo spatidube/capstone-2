@@ -1,0 +1,20 @@
+=== Receipt ===
+SMALL sprite - $2.00
+Total: $2.00
+==============
+
+=== Receipt ===
+SMALL sprite - $2.00
+bbq Chips - $1.50
+Total: $3.50
+==============
+
+=== Receipt ===
+4 inch white sandwich (toasted) - $5.00
+  + pickles (Extra) - $0.50
+  + queso - $0.25
+  + steak - $0.25
+
+Total: $5.00
+==============
+

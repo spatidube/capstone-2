@@ -1,5 +1,5 @@
 # DELI-cious Ordering System
-!![img_9.png](../../../../../target/img_9.png)
+!![img_9.png](target/img_9.png)
 Welcome to the **DELI-cious Ordering System**, an interactive platform designed to bring the essense of Eating Good.nc into a world of sandiwch creativity. 
 This application allows users to customize their experience with
 ---
@@ -18,7 +18,7 @@ This application allows users to customize their experience with
 ## 🧱 Class Architecture
 
 [Class Diagram](src/main/resources/Receipts/Capstone%202%20-%20DELI-cious.png)
-![img_2.png](../../../../../target/img_2.png)
+![img_2.png](target/img_2.png)
 ---
 
 ## 🖥️ Application Screens

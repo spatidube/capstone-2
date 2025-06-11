@@ -3,9 +3,6 @@ import java.util.*;
 import java.io.*;
 
 @SuppressWarnings("all")
-public class Menu {
-    // class code here
-}
 
 class Menu {
 

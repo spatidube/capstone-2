@@ -1,4 +1,5 @@
 package com.pluralsight;
+
 import java.util.*;
 import java.io.*;
 
@@ -11,7 +12,7 @@ public class UserInterface {
         while (running) {
             MainScreen.displayWelcome();
             Menu menu = new Menu();
-            MenuReading.loadMenu(menu);
+            MenuReader.loadMenu(menu);
             MainScreen.displayMenu(menu);
 
             System.out.print("Choose an option: ");
@@ -54,9 +55,7 @@ public class UserInterface {
         }
     }
 
-
-
-//understand
+    // Builds a custom sandwich with toppings
     private Sandwich buildSandwich() {
         System.out.print("Enter sandwich size (4, 8, 12): ");
         int size = scanner.nextInt();
@@ -89,7 +88,8 @@ public class UserInterface {
 
         return sandwich;
     }
-//customer customizing their drink
+
+    // Customer customizing their drink
     private Drink buildDrink() {
         System.out.print("Enter drink size (SMALL, MEDIUM, LARGE): ");
         Enums.DrinkSize size = Enums.DrinkSize.valueOf(scanner.nextLine().toUpperCase());
@@ -99,12 +99,37 @@ public class UserInterface {
 
         return new Drink(size, flavor);
     }
-//customer ordering their drink
+
+    // Customer ordering their chips
     private Chips buildChips() {
         System.out.print("Enter chip flavor: ");
         return new Chips(scanner.nextLine());
     }
 
+    // Remove the last item in the order
+    private void removeLastItem() {
+        if (!currentOrder.isEmpty()) {
+            Item removed = currentOrder.remove(currentOrder.size() - 1);
+            System.out.println("Removed: " + removed.getName());
+        } else {
+            System.out.println("No items to remove.");
+        }
+    }
 
+    // Finalize the order and print a receipt
+    private void checkout() {
+        if (currentOrder.isEmpty()) {
+            System.out.println("No items in order.");
+            return;
+        }
+
+        Order order = new Order();
+        for (Item item : currentOrder) {
+            order.addItem(item);
+        }
+
+        System.out.println(order);
+        ReceiptWriter.writeReceipt(order);
+        currentOrder.clear();
     }
 }

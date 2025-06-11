@@ -4,8 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Order {
+    public List<Item> getItems() {
+        return items;
+    }
 
-    private List<Item> items = new ArrayList<>(); // list of all drinks
+    private List<Item> items = new ArrayList<>(); // list of all orderable items
 
     public void addItem(Item item) {
         items.add(item);
